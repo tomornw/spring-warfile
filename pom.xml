@@ -11,7 +11,7 @@
     <groupId>tomorn.in.th</groupId>
     <artifactId>jsf_primefaces</artifactId>
     <version>1.0.0</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>jsf_primefaces</name>
 
