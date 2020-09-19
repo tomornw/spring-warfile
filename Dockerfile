@@ -9,4 +9,5 @@ RUN  rm -rf $DIR_WEBAPP/*
 
 ADD target/*.war $DIR_WEBAPP/ROOT.war
 
+EXPOSE 8080
 CMD ["catalina.sh", "run"]
