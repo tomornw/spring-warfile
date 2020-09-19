@@ -1,20 +1,20 @@
 #!/bin/bash
 echo "welcome"
 #
-#jsf_primefaces
+#spring
 #
-echo "jsf_primefaces"
+echo "spring"
 echo "stop container and remove image"
-docker container rm -f jsf_primefaces
-docker image rm -f jsf_primefaces
+docker container rm -f spring
+docker image rm -f spring
 echo "Go to Folder Script File And Dockerfile"
-cd ~/mitrphol/basic_jsf_primefaces/jsf_primefaces/
+cd ~/mitrphol/spring-warfile/
 echo "clean"
 mvn clean install
 echo "compile package"
 mvn package
 echo "build image from docker file"
-docker build -t jsf_primefaces .
+docker build -t spring .
 echo "run image to container"
-docker run --restart=always --name jsf_primefaces -p 9999:8080 -d jsf_primefaces
+docker run --restart=always --name spring -p 9999:8080 -d spring
 echo "finish step"
