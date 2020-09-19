@@ -1,10 +1,9 @@
 FROM tomcat:9
 
-ENV TZ=Asia/Bangkok
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+ENV DIR_WEBAPP /usr/local/tomcat/webapps/
 
-ENV PACKAGE_FILE /usr/local/tomcat/webapps/
-RUN  rm -rf $PACKAGE_FILE/*
-ADD target/*.war $PACKAGE_FILE/ROOT.war
+RUN  rm -rf $DIR_WEBAPP/*
+
+ADD target/*.war $DIR_WEBAPP/ROOT.war
 
 CMD ["catalina.sh", "run"]
