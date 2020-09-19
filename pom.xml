@@ -11,6 +11,7 @@
     <groupId>tomorn.in.th</groupId>
     <artifactId>jsf_primefaces</artifactId>
     <version>1.0.0</version>
+    <packaging>jar</packaging>
 
     <name>jsf_primefaces</name>
 
@@ -27,6 +28,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!--  JSF  -->
         <dependency>
@@ -90,6 +97,7 @@
                 <version>3.3.0</version>
             </plugin>
         </plugins>
+        <finalName>app</finalName>
     </build>
 
 </project>

@@ -27,4 +27,10 @@ public class IndexController {
         model.addAttribute("time", dateStr);
         return "index.jsf";
     }
+
+    @RequestMapping("/test")
+    public String home() {
+        return "Hello Docker World";
+    }
+
 }
