@@ -1,6 +1,6 @@
 FROM openjdk:8-jdk-alpine
 
-RUN mvn clean -f pom.xml package
+RUN mvn clean install package
 
 ARG PACKAGE_FILE=target/*.jar
 COPY ${PACKAGE_FILE} app.jar
