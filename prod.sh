@@ -14,7 +14,7 @@ mvn clean install
 echo "compile package"
 mvn package
 echo "build image from docker file"
-docker build -t spring .
+mvn spring-boot:build-image -Dspring-boot.build-image.imageName=spring
 echo "run image to container"
-docker run --restart=always --name spring -p 9999:8080 -d spring
+docker run --restart=always -e TZ="Asia/Bangkok" --name spring -p 9999:8080 -d spring
 echo "finish step"
