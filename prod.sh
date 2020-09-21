@@ -9,10 +9,8 @@ docker container rm -f spring
 docker image rm -f spring
 echo "Go to Folder Script File And Dockerfile"
 cd ~/mitrphol/spring-warfile/
-echo "clean"
-mvn clean install
-echo "compile package"
-mvn package
+echo "package"
+mvn clean install package
 echo "build image from docker file"
 mvn spring-boot:build-image -Dspring-boot.build-image.imageName=spring
 echo "run image to container"
