@@ -1,5 +1,5 @@
 #Dockerfile
-FROM openjdk:8-jdk
+FROM openjdk:8-jdk-alpine
 LABEL maintainer="tomornw@mitrphol.com"
 
 ARG JAR_FILE=target/*.jar
