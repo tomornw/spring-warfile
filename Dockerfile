@@ -1,6 +1,12 @@
 #Dockerfile
-FROM openjdk:8-jdk-alpine
+FROM maven:3.6.3-jdk-8
 LABEL maintainer="tomornw@mitrphol.com"
+
+# copy the source tree and the pom.xml to our new container
+COPY ./ ./
+ 
+# package our application code
+RUN mvn clean package
 
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar
